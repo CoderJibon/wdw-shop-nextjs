@@ -15,7 +15,7 @@ export default function Footer() {
             illo impedit laborum officia?
           </p>
           <p className="text-base text-black mt-6 opacity-60 ">
-            ( +000) 12345690 - info@exzample.com
+            (+000) 12345690 - info@exzample.com
           </p>
         </div>
         {/* 2nd */}
@@ -39,25 +39,6 @@ export default function Footer() {
         </div>
         {/* 2nd */}
         <div className="lg:mx-auto">
-          <h3 className="footer_title">Information</h3>
-          <Link className="footer_link" href={"/"}>
-            About Us
-          </Link>
-          <Link className="footer_link" href={"/"}>
-            Privacy Police
-          </Link>
-          <Link className="footer_link" href={"/"}>
-            Return Police
-          </Link>
-          <Link className="footer_link" href={"/"}>
-            DropShipping
-          </Link>
-          <Link className="footer_link" href={"/"}>
-            Shipping Police
-          </Link>
-        </div>
-        {/* 3nd */}
-        <div className="lg:mx-auto">
           <h3 className="footer_title">Account</h3>
           <Link className="footer_link" href={"/"}>
             Dashboard
@@ -72,7 +53,7 @@ export default function Footer() {
             Track My Order
           </Link>
         </div>
-        {/* 4nd */}
+        {/* 3nd */}
         <div className="lg:mx-auto">
           <h3 className="footer_title">Shop</h3>
           <Link className="footer_link" href={"/"}>

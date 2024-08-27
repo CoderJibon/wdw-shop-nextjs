@@ -12,3 +12,10 @@ export const singleProduct = async (id: string) => {
   const res = await fetch(`https://fakestoreapi.com/products/${id}`);
   return res.json();
 };
+
+export const specificCategory = async (category: string) => {
+  const resCart = await fetch(
+    `https://fakestoreapi.com/products/category/${category}`
+  );
+  return resCart.json();
+};
