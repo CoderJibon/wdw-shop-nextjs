@@ -43,7 +43,9 @@ const CartSlice = createSlice({
         if (existingItem.quantity > 1) {
           existingItem.quantity -= 1;
         } else {
-          state.items.filter((item) => item.id !== action.payload.id);
+          state.items = state.items.filter(
+            (item) => item.id != action.payload.id
+          );
         }
       }
     },

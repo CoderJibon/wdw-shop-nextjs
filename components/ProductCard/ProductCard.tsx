@@ -7,6 +7,7 @@ import React from "react";
 import { Button } from "../ui/button";
 import { useDispatch } from "react-redux";
 import { addItem } from "@/features/Cart/CartSlice";
+import { useToast } from "../ui/use-toast";
 
 type props = {
   product: products;
@@ -16,9 +17,15 @@ export default function ProductCard({ product }: props) {
   const dispatch = useDispatch();
   const num = Math.round(product.rating.rate);
   const ratingArray = new Array<number>(num).fill(0);
+  const { toast } = useToast();
 
   const addToCart = (product: products) => {
     dispatch(addItem(product));
+    toast({
+      title: product?.title,
+      description: "ITEM ADDED TO CART ",
+      variant: "success",
+    });
   };
 
   return (

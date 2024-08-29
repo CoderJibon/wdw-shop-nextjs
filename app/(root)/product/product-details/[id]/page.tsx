@@ -68,7 +68,7 @@ export default async function productPage({
             SKU : {Math.random() * 5000}
           </p>
           {/* add to cart button */}
-          <AddCart />
+          <AddCart product={getPD} />
         </div>
       </div>
       {/* releted product */}
