@@ -5,14 +5,22 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
+import { useDispatch } from "react-redux";
+import { addItem } from "@/features/Cart/CartSlice";
 
 type props = {
   product: products;
 };
 
 export default function ProductCard({ product }: props) {
+  const dispatch = useDispatch();
   const num = Math.round(product.rating.rate);
   const ratingArray = new Array<number>(num).fill(0);
+
+  const addToCart = (product: products) => {
+    dispatch(addItem(product));
+  };
+
   return (
     <div className="p-4">
       <div className="w-[200px] h-[150px]">
@@ -54,7 +62,7 @@ export default function ProductCard({ product }: props) {
       </div>
       {/* button */}
       <div className="mt-4 flex items-center space-x-2 ">
-        <Button size={"icon"}>
+        <Button onClick={() => addToCart(product)} size={"icon"}>
           <ShoppingBag size={18} />
         </Button>
         <Button size={"icon"} className="bg-red-500">
