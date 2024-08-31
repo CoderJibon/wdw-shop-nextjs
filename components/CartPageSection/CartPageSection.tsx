@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 
 export default function CartPageSection() {
   const dispatch = useDispatch();
-  // call cart Service
+  //call cart  Service
   const { items } = useSelector((state: RootState) => state.cart);
   //total quantity
   const totalQuantity = items.reduce((total, item) => {
