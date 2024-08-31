@@ -40,7 +40,10 @@ export default function CartSidebar({ items }: props) {
       {items.length > 0 && (
         <div>
           {items.map((cart) => (
-            <div className="pb-4 border-b-2 border-gray-300 border-opacity-60 p-4 ">
+            <div
+              key={cart.id}
+              className="pb-4 border-b-2 border-gray-300 border-opacity-60 p-4 "
+            >
               <div>
                 <Image
                   src={cart?.image}

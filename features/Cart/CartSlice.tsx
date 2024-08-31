@@ -17,7 +17,9 @@ interface CartState {
 
 //
 const initialState: CartState = {
-  items: [],
+  items: localStorage.getItem("cart")
+    ? JSON.parse(localStorage.getItem("cart") as string)
+    : [],
 };
 
 //create cart slice
@@ -34,6 +36,7 @@ const CartSlice = createSlice({
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
       }
+      localStorage.setItem("cart", JSON.stringify(state.items));
     },
     removeItem: (state, action: PayloadAction<{ id: number }>) => {
       const existingItem = state.items.find(
@@ -47,10 +50,12 @@ const CartSlice = createSlice({
             (item) => item.id != action.payload.id
           );
         }
+        localStorage.setItem("cart", JSON.stringify(state.items));
       }
     },
     clearCart: (state) => {
       state.items = [];
+      localStorage.setItem("cart", JSON.stringify(state.items));
     },
   },
   extraReducers: () => {},
