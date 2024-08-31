@@ -1,5 +1,5 @@
 "use client";
-import { RootState } from "@/store/store";
+import { AppDispatch, RootState } from "@/store/store";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import cartEmpty from "@/public/images/cart.svg";
@@ -8,9 +8,8 @@ import { Button } from "@/components/ui/button";
 import { useUser } from "@clerk/nextjs";
 import { addItem, CartItem, removeItem } from "@/features/Cart/CartSlice";
 
-export default function page() {
-  const dispatch = useDispatch();
-
+export default function CartPage() {
+  const dispatch = useDispatch<AppDispatch>();
   // call cartService
   const { items } = useSelector((state: RootState) => state.cart);
   //total quantity
