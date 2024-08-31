@@ -10,7 +10,7 @@ import { addItem, CartItem, removeItem } from "@/features/Cart/CartSlice";
 
 export default function CartPage() {
   const dispatch = useDispatch<AppDispatch>();
-  // call cartService
+  // call cart Service
   const { items } = useSelector((state: RootState) => state.cart);
   //total quantity
   const totalQuantity = items.reduce((total, item) => {
