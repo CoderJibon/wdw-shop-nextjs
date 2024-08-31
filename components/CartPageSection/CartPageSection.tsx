@@ -1,5 +1,5 @@
 "use client";
-import { addItem, CartItem, removeItem } from "@/features/Cart/CartSlice.jsx";
+import { addItem, CartItem, removeItem } from "@/features/Cart/CartSlice";
 import { RootState } from "@/store/store.js";
 import { useUser } from "@clerk/nextjs";
 import { useDispatch, useSelector } from "react-redux";
