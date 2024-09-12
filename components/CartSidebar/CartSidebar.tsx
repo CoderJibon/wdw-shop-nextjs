@@ -6,18 +6,19 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { SheetClose } from "../ui/sheet";
 import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/store/store";
 type props = {
   items: CartItem[];
 };
 
 export default function CartSidebar({ items }: props) {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
-  const addCartItem = (item: CartItem) => {
+  const addCartItem = (item: CartItem): void => {
     dispatch(addItem(item));
   };
 
-  const RemoveCartItem = (id: number) => {
+  const RemoveCartItem = (id: number): void => {
     dispatch(removeItem({ id }));
   };
 

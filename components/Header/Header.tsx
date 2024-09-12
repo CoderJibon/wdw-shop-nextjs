@@ -1,6 +1,6 @@
-import Image from "next/image.js";
+import Image from "next/image";
 import logo from "@/public/images/logo.png";
-import Link from "next/link.js";
+import Link from "next/link";
 import SearchBox from "../Helper/SearchBox";
 import { HeartIcon, UserIcon } from "lucide-react";
 import ShoppingCartButton from "../ShoppingCartButton/ShoppingCartButton";

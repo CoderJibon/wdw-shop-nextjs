@@ -8,13 +8,14 @@ import { Button } from "../ui/button";
 import { useDispatch } from "react-redux";
 import { addItem } from "@/features/Cart/CartSlice";
 import { useToast } from "../ui/use-toast";
+import { AppDispatch } from "@/store/store";
 
 type props = {
   product: products;
 };
 
 export default function ProductCard({ product }: props) {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const num = Math.round(product.rating.rate);
   const ratingArray = new Array<number>(num).fill(0);
   const { toast } = useToast();

@@ -2,7 +2,6 @@ import { categoryAll } from "@/Requests/Requests";
 
 export default async function CategorySection() {
   const category: string[] = await categoryAll();
-  console.log(category);
   return (
     <div className="pt-16 pb-12">
       <h1 className="text-center font-bold text-2xl capitalize ">
